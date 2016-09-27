@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <input v-model="name">
+        {{name}}
+        
+        <hr>
+        order By -1 is desc order by
+        <hr>
+       <li v-for="item in items | filterBy name in 'msg' | orderBy 'msg' -1 ">
+            {{item.msg}}   
+        </li>    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         name: "",
+         items: [
+             {msg : 'bruce'},
+             {msg : 'chuck'},
+             {msg : 'jackie'},
+         ]
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data        
+     });
+    </script>
+</body>
+</html>

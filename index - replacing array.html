@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <li v-for="item in items">
+            {{$index}} {{item.msg}}
+        </li>
+
+        <button v-on:click="f1">filter aa</button>
+        <button v-on:click="f2">concat arr</button>
+        <button v-on:click="f3">splice 2,3</button>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+    var data = {
+         items: [
+             {msg : 'aa'},
+             {msg : 'bb'},
+             {msg : 'cc'},
+             {msg : 'dd'},
+         ],
+         arr : [
+             {msg : 'aa1'},
+             {msg : 'bb2'}
+         ]
+        };
+
+    var vue = new Vue({
+        el : "#app",
+        data : data,
+        methods : {
+            f1 : function(){
+                this.items = this.items.filter(function(item){
+                    return item.msg.match(/aa/);
+                })
+            },
+            f2 : function(){
+                this.items = this.items.concat(this.arr[0]);
+                this.items = this.items.concat(this.arr[1]);
+            },
+            f3 : function(){
+                this.items = this.items.splice(2,3);
+            }
+        }      
+     });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        v-bind => :
+        <br>
+        v-on => @
+        <hr>
+        <a :href="url">{{url}}</a>
+        <h1>
+            <button @click="doing">value = 1</button>
+        </h1>
+        <h2>value : {{a}}</h2>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+          a: 100,
+          url: "http://www.google.com"
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          methods: {
+              doing: function() {
+                this.a = 1;
+              }
+          }
+     });
+    </script>
+</body>
+</html>

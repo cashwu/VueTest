@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <div>{{number +1}}</div>
+       <div>{{ok ? "Yes" : "No"}}</div>
+       <div>{{msg.split("").reverse().join("")}}</div>
+
+        <hr>
+        console have error
+       // {{ var a = 1 }}
+       <br>
+       // {{ if(true){ return msg } }}
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+           number : 100,
+           ok: false,
+           msg: "hello world"
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

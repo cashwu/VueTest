@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="view">
+        <label for="name">Enter name:</label>
+        <input type="text" name="name" v-model="name">
+        {{name | uppercase}} is {{age}} years old.
+        
+        <ul>
+            <li v-for="f in friends | orderBy 'age'"> {{f.name}}</li>
+        </ul>
+        
+        <hr>
+        
+        <ul>
+            <li v-for="f in friends | filterBy 'o'"> {{ f.name }} </li>
+        </ul>
+        
+        <button type="button" v-on:click="greet">Say Hello</button>
+        
+        <button type="button" v-on:click="greet2('msg')">Say Hello</button>
+        
+        <button type="button" v-on:click="greet3('msg', $event)">Say Hello</button>
+        
+        <button type="button" v-on:click="reversMsg">Revers Msg</button>
+    </div>   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

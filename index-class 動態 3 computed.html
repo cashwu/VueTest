@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style media="screen">
+        .a {
+            border: 2px;
+            border-style: solid;
+        }
+
+        .b {
+            font-size: 50px;
+        }
+
+        .c {
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div v-bind:class="ccgo">test 123</div>
+        <br>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+         cc : [ "a", "c"],
+         b: true
+    };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          computed: {
+              ccgo : function(){
+                  return {
+                      "a" : this.cc.indexOf("a") > -1,
+                      "b" : this.b,
+                      "c" : this.cc.indexOf("c") > -1
+                  }
+              }
+          }
+     });
+
+    </script>
+</body>
+</html>

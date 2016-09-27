@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <div v-for="(index, item) in items">
+            <div>
+                <span>{{item.name}}</span>
+                <input type="text" v-model="item.value" lazy number>
+            </div>
+        </div>
+        <hr>
+        {{total}}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    Vue.config.debug = true;
+
+    var data = {
+          items: [
+            {
+                name: "a",
+                value:1
+            },
+            {
+                name: "b",
+                value:2
+            }
+          ]
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          computed: {
+              total : function(){
+                  self = this;
+                  var temp = 0;
+                  for (var i = 0; i < self.items.length; i++) {
+                      temp += self.items[i].value;
+                  }
+                  return temp;
+              }
+          }
+     });
+    </script>
+</body>
+</html>

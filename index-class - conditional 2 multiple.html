@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style media="screen">
+        .a {
+            border: 1px;
+            border-style: solid;
+        }
+
+        .b {
+            font-size: 50px;
+        }
+
+        .c {
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div v-bind:class="[ a, { b:isB, c : isC } ]">test 123</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+          a : "a",
+          isB : true,
+          isC : false
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

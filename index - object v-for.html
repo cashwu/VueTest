@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <ul>
+           <li v-for="val in object">
+               {{ $key }} : {{ val }}
+           </li>
+           
+           <hr>
+           
+           <li v-for="(k, v) in object">
+               {{ k }} : {{ v }}
+           </li>
+       </ul> 
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         object: {
+             fn : "j",
+             ln : "d",
+             age : 10
+         }
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

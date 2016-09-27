@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>
+            <span v-text="msg | wrap 'before' 'after' "></span>
+        </h1>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+    // val is thie filter value
+    Vue.filter("wrap", function(val, begin, end){
+        return begin + val + end
+    })
+
+    var data = {
+          msg: " hello ",
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

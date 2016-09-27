@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       //綁定
+       <partial v-bind:name="partial"></partial>
+       <br>
+       <hr>
+       <partial :name="partial"></partial>
+       <br>
+       <input v-model="partial" />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+      Vue.partial("p1", "<p> p1 {{msg}} partial </p>");
+      Vue.partial("p2", "<p> p2 {{msg}} partial </p>");
+
+      var data = {
+           partial: "p1",
+           msg : "Hello"
+        };
+
+      var vue = new Vue({
+          el : "#app",
+          data : data
+      });
+
+    </script>
+</body>
+</html>

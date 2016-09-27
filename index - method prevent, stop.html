@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <button v-on:click.prevent="say('hi')">hi</button> 
+       <br>
+       <a href="http://www.google.com.tw" v-on:click.stop.prevent="say('hi')">google</a>   
+    </div>
+    
+    <hr>
+    
+    1.0.16 add capture, self
+    <br>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+        name : "vue.js"
+    };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          methods: {
+              say : function(msg){
+                                   
+                  alert(msg);
+              }
+              
+          }
+     });
+     
+    </script>
+</body>
+</html>

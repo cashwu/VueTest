@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">      
+       
+       <partial name="my-partial"></partial>
+    </div>   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+        
+    <script>       
+      
+      Vue.partial("my-partial", "<p> {{msg}} partial </p>");
+      
+      var data = {
+           msg : "Hello" 
+        };
+      
+      var vue = new Vue({
+          el : "#app",
+          data : data
+      });
+            
+    </script>
+</body>
+</html>

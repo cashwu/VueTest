@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <button v-on:click="say('hi', $event)">hi</button> 
+       <br>
+       <a href="http://www.google.com.tw" v-on:click="say('hi', $event)">google</a>   
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+        name : "vue.js"
+    };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          methods: {
+              say : function(msg, event){
+                  
+                  alert(event.type);
+                  
+                  console.log(event);
+                  
+                  alert(msg);
+                  
+                 event.preventDefault();
+              }
+              
+          }
+     });
+     
+    </script>
+</body>
+</html>

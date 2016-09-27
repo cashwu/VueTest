@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>
+            <span v-if="greeting">Hello</span>
+        </h1>
+        <h1>
+            <span v-if="!greeting">World</span>
+        </h1>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+          greeting: true
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

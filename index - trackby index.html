@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <!--<li v-for="item in items" track-by="msg" >
+            {{$index}} {{item.msg}}   
+        </li>    -->
+        
+        <template v-for="item in items" track-by="$index">
+            <li>{{$index}} {{item.msg}}</li>
+        </template>
+        <br>
+        
+        <template v-if="true">
+            {{ $data | json }}            
+        </template>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         items: [
+             {msg : 'aaa'},
+             {msg : 'bbb'}
+         ]
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

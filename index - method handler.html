@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <button v-on:click="greet">Greet</button>    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+        name : "vue.js"
+    };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          methods: {
+              greet : function(event){
+                  alert("Hello " + this.name + "!");
+                  
+                  alert(event.target.tagName);
+              }
+              
+          }
+     });
+     
+    </script>
+</body>
+</html>

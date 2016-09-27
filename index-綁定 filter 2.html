@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <h1>
+           <pre>{{jsstr | json 4}}</pre>
+       </h1>
+       <h1>
+            <pre>{{jsstr | json 8}}</pre>
+       </h1>
+       <h1>{{msg | capitalize | lowercase }}</h1>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+          msg: "hello world",
+          jsstr: {
+              1 : "123",
+              2 : "456"
+          }
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

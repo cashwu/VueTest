@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <div v-if="Math.random() > 0.5"> v-if-1 - Yes</div>
+            maybe have error, v-if can't 嵌套
+            <div v-if="Math.random() > 0.5"> v-if-2 - Yes</div>
+            <div v-else> v-else-2 - No</div>
+                 
+       <div v-else> v-else-1 - No</div>          
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         ok : true
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

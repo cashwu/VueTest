@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <div v-bind:style="ccgo">test 123</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+        styleObj : {
+            fontSize : "20px",
+            backgroundColor : "yellow"
+        },
+        styleObj1 : {
+            color : "red",
+            fontSize : "20px"
+        },
+        itemA : 10,
+        itemB : 20
+    };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          computed : {
+              ccgo : function(){
+                  if(this.itemA > this.itemB) {
+                      return this.styleObj;
+                  }
+                  else {
+                      return this.styleObj1;
+                  }
+              }
+          }
+     });
+    </script>
+</body>
+</html>

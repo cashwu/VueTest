@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+       
+    </div>   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+        
+    <script>       
+        
+        var component = Vue.extend({
+            template:"<div>test</div>"
+        })
+        
+        var myComponentInstance = new component();
+        
+        console.log(myComponentInstance)
+        
+        myComponentInstance.$mount("#app")
+        
+        //myComponentInstance.$destroy("#app")
+    </script>
+</body>
+</html>

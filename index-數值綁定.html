@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+       <span> 雙向綁定 {{msg}}</span>
+       <br>
+       <span> 單次綁定 {{*msg}}</span>
+       <br>
+       <input v-model="msg" />
+    </div>   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+        
+    <script>       
+      // Mustache {{}} 語法 
+      
+      var data = { msg : 1 };
+      
+      var vue = new Vue({
+          el : "#app",
+          data : data
+      });
+            
+    </script>
+</body>
+</html>

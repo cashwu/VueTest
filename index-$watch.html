@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        {{fulln}}
+        <br>
+        <input type="text" v-model="firstn">
+        <br>
+        <input type="text" v-model="lastn">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+          firstn : "foo",
+          lastn : "bar",
+          fulln : "foo bar"
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+
+     vue.$watch("firstn", function (val) {
+         this.fulln = val + ' ' + this.lastn;
+     })
+
+     vue.$watch("lastn", function (val) {
+         this.fulln = this.firstn + ' ' + val;
+     })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style media="screen">
+        .static {
+            border: 2px;
+            border-style: solid;
+        }
+
+        .big {
+            font-size: 50px;
+        }
+
+        .blue {
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        just can only pass a javascript object
+        <hr>
+        <div class="static" v-bind:class="style">test 123</div>
+        <br>
+        big .. {{style.big}}, blue .. {{style.blue}}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+         style : {
+             "big": true,
+             "blue": true
+         }
+    };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+    寫在後面的為優先
+    <div v-bind:style="[styleObj1, styleObj]">test 123</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+<script>
+
+var data = {
+    styleObj : {
+        fontSize : "30px",
+        backgroundColor : "yellow"
+    },
+    styleObj1 : {
+        color : "red",
+        fontSize : "25px"
+    }
+};
+
+var vue = new Vue({
+      el : "#app",
+      data : data
+ });
+</script>
+    </script>
+</body>
+</html>

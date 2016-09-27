@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    http://blogs.longwin.com.tw/lifetype/key_codes.html
+    <br>
+    http://keycode.info/
+    <hr>
+    <div id="app">
+       <input v-on:keyup.13="say1('no1 ')" v-model="a1" > enter
+       <br>
+       <input v-on:keyup.enter="say2('no2 ')" v-model="a2" > enter
+       <br>
+       <input @keyup.enter="say3('no3 ')" v-model="a3" > enter
+       <br>
+       <input @keyup.f1="say4('no4 ')" v-model="a4" > f1
+    </div>
+       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+        a1:"",
+        a2:"",
+        a3:"",
+        a4:""
+    };
+
+    Vue.directive("on").keyCodes.f1 = 112;
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          methods: {
+              say1 : function(msg){                                  
+                  alert(msg + this.a1);
+              },
+              say2 : function(msg){                                  
+                  alert(msg + this.a2);
+              },
+              say3 : function(msg){                                  
+                  alert(msg + this.a3);
+              },
+              say4 : function(msg){                                  
+                  alert(msg + this.a4);
+              }
+              
+          }
+     });
+     
+    </script>
+</body>
+</html>

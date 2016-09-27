@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style media="screen">
+        .big {
+            font-size: 20px;
+        }
+
+        .blue {
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div class="{{c1}}">test 123</div>
+        <div v-bind:class="c2">test 123</div>
+        <hr>
+        <div v-bind:class="c2" class="{{c1}}">test 123 have error</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+    // class={{}} or v-bind:class can't mix
+    Vue.config.debug = true;
+
+    var data = {
+          c1: "big",
+          c2: "blue"
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <li v-for="item in items">
+            {{item.msg}}   
+        </li>    
+    
+        add 1 element in array
+        push() - items.push({ msg : "dsf" })
+        <br>
+        delete last element from array and return the element
+        pop() - items.push.pop()
+        <br>
+        delete first element from array and return the element
+        shift() - items.shift()
+        <br>
+        add 1 element in array first
+        unshift() - items.unshift({msg : "dsf"})
+        <br>
+        splice() - items.splice(1)
+        <br>
+        sort() - items.sort()
+        <br>
+        reverse() - items.reverse()
+    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         items: [
+             {msg : 'aa'},
+             {msg : 'bb'},
+             {msg : 'cc'},
+             {msg : 'dd'},
+             {msg : 'ee'},
+             {msg : 'ff'},
+             {msg : 'gg'},
+             {msg : 'hh'}
+         ]
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

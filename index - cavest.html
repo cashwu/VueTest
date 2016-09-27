@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    vue can't doing
+    <br>
+    1. vue.items[0] = {}
+    <br>
+    2. vue.items.length = 0
+    
+    <br>
+    <div id="app">
+       <li v-for="item in items">
+            {{item.msg}}  <button v-on:click="f5(item)"> this.item.splice(index, 1)</button>
+            <button v-on:click="f6(item)">items.$remove(item)</button>
+        </li>    
+        
+        <hr>
+        {{ $data | json }}
+        <hr>
+        
+        <button v-on:click="f1"> items[0] = {} faild</button>
+        <br>
+        <button v-on:click="f2"> items.$set(0, {})</button>
+        <br>
+        <button v-on:click="f3"> items.length = 0</button>
+        <br>
+        <button v-on:click="f4"> items = {}</button>
+        <br>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         items: [
+             {msg : '1aa'},
+             {msg : '2bb'},
+             {msg : '3cc'}
+         ]
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          methods : {
+              
+              f1:function(){
+                  this.items[0] = {}; // faild
+              },
+              f2 : function(){
+                  this.items.$set(0, { });
+              },
+              f3:function(){
+                  this.items.length = 0;
+              },
+              f4:function(){
+                  this.items = {};
+              },
+              f5 : function(item){
+                  
+                  var index = this.items.indexOf(item);
+                  if(index !== -1){
+                      this.items.splice(index, 1);
+                  }
+                  
+              },
+              f6 : function(item){
+                  this.items.$remove(item);
+              }
+              
+          }
+     });
+    </script>
+</body>
+</html>

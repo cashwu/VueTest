@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <li v-for="item in filter">
+            {{item}}   
+        </li>    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         items: [
+             {msg : 'aaaaa'},
+             {msg : 'bb'},
+             {msg : 'cccc'},
+         ]
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          computed: {
+              filter: function(){
+                  self = this;
+                  var arr = [];
+                  
+                  for(var i =0, l = self.items.length; i< l; i++){
+                      var item = self.items[i].msg
+                      
+                      if(item.length >= 4){
+                          arr.push(item);
+                      }
+                  }
+                  
+                  return arr;
+              }
+              
+          }
+     });
+    </script>
+</body>
+</html>

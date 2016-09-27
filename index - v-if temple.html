@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <template v-if="ok1">
+        <h1>ok1</h1>
+        <p>paragraph ok1</p>
+        <p>paragraph ok1</p>     
+        </template>
+        <template v-if="ok2">
+        <h1>ok2</h1>
+        <p>paragraph ok2</p>
+        <p>paragraph ok2</p>     
+        </template>
+        <template v-if="ok3">
+        <h1>ok3</h1>
+        <p>paragraph ok3</p>
+        <p>paragraph ok3</p>     
+        </template>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+        var data = {
+         ok1 : true,
+         ok2 : false,
+         ok3 : true
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+
+</html>

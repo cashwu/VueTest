@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <div v-bind:style="{
+            'transform' : 'rotate(3deg)',
+            'box-shadow' : '0 20px 30px rgba(0,0,0,1)'
+        }">test 123</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+        styleObj : {
+            'transform' : 'rotate(3deg)',
+            'box-shadow' : '0 20px 30px rgba(0,0,0,1)'
+        }
+    }
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

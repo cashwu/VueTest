@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style media="screen">
+        .static {
+            border: 2px;
+            border-style: solid;
+        }
+
+        .big {
+            font-size: 20px;
+        }
+
+        .blue {
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        pass a javascript object, v-bind:class and class can exist both
+        <hr>
+        <div class="static" v-bind:class="{ 'big' : isA, 'blue' : isB }">test 123</div>
+        <br>
+        <button @click="isA = !isA">isA : {{isA}}</button>
+        <button @click="isB = !isB">isB : {{isB}}</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+          isA: true,
+          isB: false
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+
+    </script>
+</body>
+</html>

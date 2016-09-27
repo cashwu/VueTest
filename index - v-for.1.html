@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+       <li v-for="(index, item) in items">
+            {{index}} - {{item.msg}}   
+        </li> 
+        <hr >
+        1.0.17 can using of to foreach array
+        <li v-for="item of items">
+            {{ $index }} - {{item.msg}}   
+        </li>    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+    <script>
+
+    var data = {
+         items: [
+             {msg : 'ccc'},
+             {msg : 'ddd'}
+         ]
+        };
+
+    var vue = new Vue({
+          el : "#app",
+          data : data
+     });
+    </script>
+</body>
+</html>

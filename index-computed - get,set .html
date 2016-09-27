@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        {{full}}
+        <br>
+        <input type="text" v-model="full">
+        <br>
+        fn .. {{fn}}
+        <hr>
+        ln .. {{ln}}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+    <script>
+
+    var data = {
+        fn : "foo",
+        ln : "bar"
+    };
+    // computed default is getter, but can write a setter
+    var vue = new Vue({
+          el : "#app",
+          data : data,
+          computed: {
+              full : {
+                  get : function(){
+                    return this.fn + " " + this.ln;
+                  },
+                  set : function(newVal) {
+                    console.log("newVal .. " + newVal);
+                    var names = newVal.split(" ");
+                    this.fn = names[0];
+                    this.ln = names[1];
+                  }
+              }
+          }
+     });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">      
+       <span> {{{msg}}}</span>
+       <br>
+       <hr>
+       <span> {{msg}}</span>
+    </div>   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+        
+    <script>       
+      
+      var data = {
+           msg : "<img src='https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png' />" 
+        };
+      
+      var vue = new Vue({
+          el : "#app",
+          data : data
+      });
+            
+    </script>
+</body>
+</html>
